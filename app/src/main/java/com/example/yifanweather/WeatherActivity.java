@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.yifanweather.gson.Forecast;
 import com.example.yifanweather.gson.Weather;
+import com.example.yifanweather.service.AutoUpdateService;
 import com.example.yifanweather.util.HttpUtil;
 import com.example.yifanweather.util.Utility;
 
@@ -239,6 +240,9 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
+    
     }
 
 }
